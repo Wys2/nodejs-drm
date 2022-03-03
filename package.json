@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-drm",
+  "version": "1.0.0",
+  "description": "A Digital Rights Managements System",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "nodejs-drm"
+  },
+  "author": "Wys",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "4.0",
+    "nodejs-license-key": "^1.0.1"
+  }
+}
