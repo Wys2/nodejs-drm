@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "A Digital Rights Managements System",
   "main": "server.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "nodejs-drm"
@@ -13,6 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "4.0",
+    "fs": "^0.0.1-security",
     "nodejs-license-key": "^1.0.1"
   }
 }
