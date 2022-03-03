@@ -1,1 +1,1 @@
-# Just a regular DRM system for NoddeJS
+# Just a regular DRM system for NodeJS
