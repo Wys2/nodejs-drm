@@ -12,6 +12,7 @@ log(chalk.inverse(`${package.name} V.${package.version}, by ${package.author}.`)
 log(chalk.inverse("Loading Consts..."))
 const licenseKey = require('nodejs-license-key');
 const fs = require("fs")
+const cliSelect = require('cli-select');
 
 // Lang
 log(chalk.inverse("Loading language files..."))
@@ -19,10 +20,11 @@ let languageArray = []
 
 try {
     fs.readdirSync("./lang").forEach(pull => {
-        if(pull.endsWith(".json")){
-            languageArray.push(pull)
+        var verif = require(`./lang/${pull}`)
+        if(pull.endsWith(".json") && verif && verif.title){
+            languageArray.push(verif.title)
         } else {
-            log(chalk.bgRed(`${pull} isn't a json file!`))
+            log(chalk.bgRed(`${pull} isn't valid!`))
         }
     })
     log(chalk.bgGreen(`Loaded ${languageArray.length} languages!`))
@@ -31,3 +33,23 @@ try {
 }
 
 // Language Selector
+let options = {
+    values: languageArray,
+    valueRenderer: (value, selected) => {
+        if (selected) {
+            return chalk.underline(value);
+        }
+ 
+        return value;
+    },
+    selected: "❮●❯",
+    unselected: "❮ ❯"
+}
+
+cliSelect(options, (valueId, value) => {
+    if (valueId !== null) {
+        console.log('selected ' + valueId + ': ' + value);
+    } else {
+        console.log('cancelled');
+    }
+});

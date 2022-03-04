@@ -1,6 +1,6 @@
 {
   "name": "nodejs-drm",
-  "version": "1.0.0",
+  "version": "3.0.3",
   "description": "A Digital Rights Managements System",
   "main": "server.js",
   "scripts": {},
@@ -12,6 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "4.0",
+    "cli-select": "^1.1.2",
     "fs": "^0.0.1-security",
     "nodejs-license-key": "^1.0.1"
   }
